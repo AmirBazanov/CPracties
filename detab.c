@@ -6,6 +6,11 @@ void replaseTabs(char f[], char t[]);
 int main() {
   char string[LIM];
   char tabLesArr[LIM];
+  for (int a = 0; a < LIM; a++) {
+    string[a] = 0;
+
+    tabLesArr[a] = 0;
+  }
   getLine(string);
   replaseTabs(string, tabLesArr);
   for (int i = 0; i < LIM - 1; i++) {
@@ -17,7 +22,7 @@ void getLine(char s[]) {
   int c, i;
   for (i = 0; i < LIM - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
     s[i] = c;
-  if (c == 'n') {
+  if (c == '\n') {
     s[i] = c;
     ++i;
   }
